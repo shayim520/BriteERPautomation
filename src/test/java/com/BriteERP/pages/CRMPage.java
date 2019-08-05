@@ -1,4 +1,7 @@
 package com.BriteERP.pages;
 
-public class CRMPage {
+import com.BriteERP.utilities.TestBase;
+
+public class CRMPage  {
+
 }
