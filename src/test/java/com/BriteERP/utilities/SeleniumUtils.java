@@ -1,15 +1,13 @@
 package com.BriteERP.utilities;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-import java.io.File;
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class BrowserUtils {
+
+public class SeleniumUtils {
     /**
      *
      * @param expectedResult
@@ -66,29 +64,5 @@ public class BrowserUtils {
         }
     }
 
-    /*
-     * takes screenshot
-     * @param name
-     * take a name of a test and returns a path to screenshot takes
-     */
-    public static String getScreenshot(String name) {
-        // name the screenshot with the current date time to avoid duplicate name
-        String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_hh:mm:ss a"));
-        // TakesScreenshot ---> interface from selenium which takes screenshots
-        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
-        File finalDestination = new File(target);
-        // save the screenshot to the path given
-        try {
-            FileUtils.copyFile(source, finalDestination);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return target;
-    }
-
 
 }
-

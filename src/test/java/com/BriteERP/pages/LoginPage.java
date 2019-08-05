@@ -2,12 +2,14 @@ package com.BriteERP.pages;
 
 import com.BriteERP.utilities.ConfigurationReader;
 import com.BriteERP.utilities.Driver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
+    WebDriver driver = Driver.getDriver();
         public LoginPage(){
             PageFactory.initElements(Driver.getDriver(), this);}
 
